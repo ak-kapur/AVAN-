@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Advisory Services | AVAN & Associates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: #00264d;
+            color: #fff;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        header .logo span {
+            color: #00bfff;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        header nav ul li a:hover {
+            color: #00bfff;
+        }
+
+        header nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #00bfff;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        header nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 38, 77, 0.8), rgba(0, 38, 77, 0.8)), 
+                        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00bfff;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #008fb3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            color: #00264d;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: #00bfff;
+            bottom: -10px;
+            left: 25%;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #00bfff;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #00264d;
+        }
+
+        .why-choose-us {
+            background: #f0f8ff;
+            padding: 4rem 0;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-item i {
+            color: #00bfff;
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+
+        .feature-text h3 {
+            margin: 0 0 0.5rem 0;
+            color: #00264d;
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .client-name {
+            font-weight: 700;
+            color: #00264d;
+        }
+
+        .client-position {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #00264d;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-light {
+            background: white;
+            color: #00264d;
+        }
+
+        .btn-light:hover {
+            background: #e6e6e6;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #001a33;
+            color: #fff;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #00bfff;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a:hover {
+            color: #00bfff;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #00bfff;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            header nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">AVAN<span>&</span> Associates</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Financial Advisory Services</h1>
+            <p>Expert guidance to navigate complex financial decisions and maximize your business potential</p>
+            <a href="contact.html" class="btn">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="section-title">
+            <h2>Our Financial Advisory Services</h2>
+            <p>We provide comprehensive financial solutions tailored to your unique business needs</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Financial Modeling</h3>
+                <p>Create detailed financial models to forecast revenue, expenses, and cash flow with scenario analysis for better decision-making.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-balance-scale"></i>
+                <h3>Valuation Services</h3>
+                <p>Accurate determination of business, asset, or investment values using industry-standard methodologies.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-handshake"></i>
+                <h3>M&A Advisory</h3>
+                <p>End-to-end support for mergers and acquisitions including due diligence, deal structuring, and integration planning.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Financial Restructuring</h3>
+                <p>Strategic solutions to improve cash flow, reduce debt, and enhance overall financial performance.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-piggy-bank"></i>
+                <h3>Capital Raising</h3>
+                <p>Expert guidance in securing funding through equity, debt, or alternative financing options.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-search-dollar"></i>
+                <h3>Investment Analysis</h3>
+                <p>Comprehensive evaluation of investment opportunities to maximize returns and minimize risks.</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose AVAN & Associates?</h2>
+                <p>What sets us apart in delivering exceptional financial advisory services</p>
+            </div>
+
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-award"></i>
+                    <div class="feature-text">
+                        <h3>Industry Expertise</h3>
+                        <p>Our team brings decades of combined experience across multiple industries and financial disciplines.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <div class="feature-text">
+                        <h3>Data-Driven Approach</h3>
+                        <p>We base our recommendations on rigorous analysis and market intelligence, not just intuition.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="feature-text">
+                        <h3>Client-Centric Focus</h3>
+                        <p>Your goals become our priorities. We tailor solutions to your specific needs and circumstances.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-lock"></i>
+                    <div class="feature-text">
+                        <h3>Confidentiality Assured</h3>
+                        <p>We maintain the highest standards of discretion and data security for all client engagements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Success Stories</h2>
+                <p>Hear what our clients say about working with us</p>
+            </div>
+
+            <div class="testimonial-card">
+                <p>"AVAN & Associates provided invaluable guidance during our Series B funding round. Their financial modeling and investor presentation preparation helped us secure 30% more capital than we initially targeted."</p>
+                <div>
+                    <div class="client-name">Sarah Johnson</div>
+                    <div class="client-position">CEO, TechStart Innovations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Financial Strategy?</h2>
+            <p>Contact us today to schedule a consultation with one of our financial advisors and discover how we can help your business thrive.</p>
+            <a href="contact.html" class="btn btn-light">Get Started Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AVAN & Associates</h3>
+                    <p>Providing expert financial advisory services to help businesses navigate complex financial landscapes and achieve sustainable growth.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="financial-advisory-services.html">Financial Advisory</a></li>
+                        <li><a href="#">Business Consulting</a></li>
+                        <li><a href="#">Tax Planning</a></li>
+                        <li><a href="#">Risk Management</a></li>
+                        <li><a href="#">Investment Strategy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Financial District, New York, NY</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@avanassociates.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 AVAN & Associates. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxation Services | AVAN & Associates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: #00264d;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .logo span {
+            color: #00bfff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: #00bfff;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #00bfff;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 38, 77, 0.8), rgba(0, 38, 77, 0.8)), url('images/tax-hero.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 180px 20px 100px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .service-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .service-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .service-section {
+            margin-bottom: 3rem;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #00264d;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: #00bfff;
+            bottom: 0;
+            left: 0;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: #f5f9ff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            color: #00264d;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .service-card p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #00bfff;
+            margin-bottom: 1rem;
+        }
+
+        .benefits-list {
+            margin-top: 2rem;
+        }
+
+        .benefits-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            color: #555;
+        }
+
+        .benefits-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #00bfff;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #00264d;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 20px;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            color: #fff;
+        }
+
+        .cta-section h2::after {
+            background: #00bfff;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00bfff;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #0099cc;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #00264d;
+            color: #fff;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: #00bfff;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-col p {
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #00bfff;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #00bfff;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 150px 20px 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">AVAN<span>&</span>Associates</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Expert Taxation Services</h1>
+        <p>Strategic tax planning and compliance solutions to minimize liabilities and maximize your financial potential</p>
+    </section>
+
+    <main>
+        <div class="container">
+            <section class="service-intro">
+                <h2>Comprehensive Tax Solutions</h2>
+                <p>At AVAN & Associates, we provide expert taxation services to help individuals and businesses navigate complex tax regulations while optimizing their financial position. Our team stays current with changing tax laws to ensure you benefit from every available opportunity.</p>
+            </section>
+
+            <section class="service-section">
+                <h2>Our Taxation Services</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>Income Tax Services</h3>
+                        <p>Comprehensive preparation and filing of income tax returns for individuals, businesses, and organizations with strategic planning to minimize liabilities.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-receipt"></i>
+                        <h3>GST Compliance</h3>
+                        <p>End-to-end GST services including registration, return filing, compliance management, and advisory for seamless GST implementation.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-building"></i>
+                        <h3>Corporate Tax Planning</h3>
+                        <p>Strategic tax planning to minimize corporate tax liabilities while ensuring full compliance with all regulatory requirements.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-search-dollar"></i>
+                        <h3>Tax Audit Support</h3>
+                        <p>Expert representation and documentation support during tax audits to ensure smooth proceedings and optimal outcomes.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>International Taxation</h3>
+                        <p>Specialized advisory for businesses with cross-border operations, including transfer pricing and tax treaty benefits.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Payroll Tax Services</h3>
+                        <p>Comprehensive payroll tax solutions including registration, filing, compliance, and advisory services tailored to your business needs.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="service-section">
+                <h2>Why Choose Our Tax Services?</h2>
+                <ul class="benefits-list">
+                    <li><strong>Deep Expertise:</strong> Our tax professionals have specialized knowledge across all tax domains and stay current with legislative changes.</li>
+                    <li><strong>Proactive Planning:</strong> We don't just file returns - we develop strategic tax plans that align with your financial goals.</li>
+                    <li><strong>Technology-Driven:</strong> We leverage advanced tax software for accurate calculations and efficient processing.</li>
+                    <li><strong>Compliance Assurance:</strong> Timely and accurate filing to avoid penalties and maintain good standing.</li>
+                    <li><strong>Audit Support:</strong> Dedicated representation and documentation support during tax audits and assessments.</li>
+                    <li><strong>Customized Solutions:</strong> Tailored tax strategies that consider your unique financial situation and business objectives.</li>
+                </ul>
+            </section>
+        </div>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Optimize Your Tax Strategy Today</h2>
+                <p>Our tax experts are ready to help you navigate complex regulations while maximizing your financial position. Contact us for a personalized consultation.</p>
+                <a href="contact.html" class="btn">Schedule Consultation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>AVAN & Associates</h3>
+                <p>Providing exceptional tax, audit, and advisory services to help businesses and individuals achieve their financial goals.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="audit-and-assurance.html">Audit & Assurance</a></li>
+                    <li><a href="tax-consulting.html">Tax Consulting</a></li>
+                    <li><a href="business-advisory.html">Business Advisory</a></li>
+                    <li><a href="financial-services.html">Financial Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Financial District</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@avanassociates.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 AVAN & Associates. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
