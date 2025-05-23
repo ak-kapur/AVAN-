@@ -421,89 +421,6 @@
             transform: translateX(5px);
         }
         
-        /* Team Section */
-        .team {
-            padding: 100px 0;
-            background: var(--light-color);
-            text-align: center;
-        }
-        
-        .team-members {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .member-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        
-        .member-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .member-image {
-            height: 300px;
-            overflow: hidden;
-        }
-        
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .member-card:hover .member-image img {
-            transform: scale(1.05);
-        }
-        
-        .member-info {
-            padding: 25px;
-        }
-        
-        .member-name {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        
-        .member-position {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        .member-bio {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .member-social {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .member-social a {
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .member-social a:hover {
-            color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
         /* Testimonials Section */
         .testimonials {
             padding: 100px 0;
@@ -916,8 +833,6 @@
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="team.html">Our Team</a></li>
-                <li><a href="blog.html">Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -946,10 +861,6 @@
                         <div class="stat-number" data-count="500">0</div>
                         <div class="stat-label">Clients Served</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="50">0</div>
-                        <div class="stat-label">Industry Awards</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -958,11 +869,11 @@
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title animate">About AVAN & Associates</h2>
-            <p class="section-subtitle animate">Trusted financial advisors since 1998</p>
+            <p class="section-subtitle animate">Trusted financial advisors</p>
             
             <div class="about-content">
                 <div class="about-text animate-left">
-                    <p>Founded in 1998, AVAN & Associates has grown from a small accounting practice to one of the most respected chartered accountancy firms in the region. Our team of highly qualified professionals brings together decades of experience across various industries and sectors.</p>
+                    <p>AVAN & Associates has grown from a small accounting practice to one of the most respected chartered accountancy firms in the region. Our team of highly qualified professionals brings together decades of experience across various industries and sectors.</p>
                     <p>We pride ourselves on our commitment to ethical practices, innovative solutions, and personalized service. Our approach combines traditional accounting excellence with modern financial strategies to help our clients navigate complex financial landscapes.</p>
                     <p>As a client-focused firm, we take the time to understand your unique business needs and goals. Whether you're a startup looking for financial guidance or an established corporation needing complex audit services, we have the expertise to support your success.</p>
                     <a href="about.html" class="btn btn-primary" style="margin-top: 20px;">Learn More About Us</a>
@@ -1085,77 +996,6 @@
         </div>
     </section>
 
-    <section class="team">
-        <div class="container">
-            <h2 class="section-title animate">Meet Our Leadership Team</h2>
-            <p class="section-subtitle animate">Highly qualified professionals dedicated to your success</p>
-            
-            <div class="team-members">
-                <div class="member-card animate" style="transition-delay: 0.1s;">
-                    <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Arjun V. Nair">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Arjun V. Nair</h3>
-                        <p class="member-position">Founder & Managing Partner</p>
-                        <p class="member-bio">With over 30 years in the industry, Arjun founded AVAN & Associates with a vision to provide ethical, client-focused accounting services.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="member-card animate" style="transition-delay: 0.2s;">
-                    <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Priya Sharma">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Priya Sharma</h3>
-                        <p class="member-position">Partner - Audit & Assurance</p>
-                        <p class="member-bio">Specializing in audit services, Priya brings 18 years of experience helping organizations improve their financial controls and compliance.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="member-card animate" style="transition-delay: 0.3s;">
-                    <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Rahul Mehta">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Rahul Mehta</h3>
-                        <p class="member-position">Partner - Tax Advisory</p>
-                        <p class="member-bio">Rahul leads our tax practice with 15 years of experience in domestic and international tax planning for businesses and high-net-worth individuals.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="member-card animate" style="transition-delay: 0.4s;">
-                    <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Neha Patel">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Neha Patel</h3>
-                        <p class="member-position">Partner - Business Advisory</p>
-                        <p class="member-bio">Neha specializes in financial strategy and business advisory, helping clients navigate growth, mergers, and complex financial decisions.</p>
-                        <div class="member-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <a href="team.html" class="btn btn-primary animate" style="margin-top: 50px; transition-delay: 0.5s;">View Full Team</a>
-        </div>
-    </section>
-
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title animate">What Our Clients Say</h2>
@@ -1239,8 +1079,6 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="blog.html">Insights</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
