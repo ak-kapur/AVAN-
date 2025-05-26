@@ -340,30 +340,6 @@
             font-size: 0.9rem;
         }
         
-        .call-back-form {
-            display: none;
-            margin-top: 30px;
-            padding: 25px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .call-back-form h3 {
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-        
-        .call-back-form input,
-        .call-back-form select {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Roboto', sans-serif;
-        }
-        
         .office-card {
             margin-bottom: 40px;
             padding-bottom: 30px;
@@ -808,28 +784,6 @@
                             <p>Get quick answers via WhatsApp</p>
                             <button class="btn btn-outline">Chat Now</button>
                         </div>
-                        
-                        <div class="connect-card" onclick="showCallBackForm()">
-                            <div class="connect-icon">
-                                <i class="fas fa-phone-volume"></i>
-                            </div>
-                            <h3>Request Call Back</h3>
-                            <p>We'll call you at your preferred time</p>
-                            <button class="btn btn-outline">Schedule Call</button>
-                        </div>
-                    </div>
-                    
-                    <div id="callBackForm" class="call-back-form">
-                        <h3>When should we call you?</h3>
-                        <input type="text" placeholder="Your Name" id="callbackName">
-                        <input type="tel" placeholder="Phone Number" id="callbackPhone">
-                        <select id="callbackTime">
-                            <option>Within 30 minutes</option>
-                            <option>Today afternoon</option>
-                            <option>Tomorrow morning</option>
-                            <option>Select specific time</option>
-                        </select>
-                        <button class="btn btn-primary" onclick="submitCallBack()">Request Call Back</button>
                     </div>
                 </div>
             </div>
@@ -919,47 +873,11 @@
         });
         
         // Instant Connect Functions
-
-        
         function openWhatsApp() {
             const phoneNumber = "919891915349";
             const message = "Hello AVAN Associates, I have a question about your services";
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
-        }
-        
-        function showCallBackForm() {
-            document.getElementById('callBackForm').style.display = 'block';
-        }
-        
-        function submitCallBack() {
-            const name = document.getElementById('callbackName').value;
-            const phone = document.getElementById('callbackPhone').value;
-            const time = document.getElementById('callbackTime').value;
-            
-            if (name && phone) {
-                alert(`Thank you ${name}! We will call you at ${phone} ${time.toLowerCase()}.`);
-                document.getElementById('callBackForm').style.display = 'none';
-                
-                // In production, you would send this data to your server
-                // fetch('/api/callback', { 
-                //     method: 'POST', 
-                //     headers: { 'Content-Type': 'application/json' },
-                //     body: JSON.stringify({name, phone, time}) 
-                // });
-            } else {
-                alert("Please fill in all required fields");
-            }
-        }
-        
-        function startVirtualAssistant() {
-            // In production, this would launch your chatbot interface
-            alert("AVAN Virtual Assistant is loading...\n\nFor demonstration purposes, this would open a live chat interface in a real implementation.");
-            
-            // Example implementation might look like:
-            // const chatWindow = window.open('', 'AVA Chat', 'width=400,height=600');
-            // chatWindow.document.write('<h1>AVAN Virtual Assistant</h1><div id="chat-container"></div>');
-            // Initialize your chat interface here
         }
         
         // Smooth scrolling for anchor links
